@@ -23,7 +23,7 @@ body {
    background: $dark-theme-background;
    color: $dark-theme-primary-text;
    font-family: $primary-font;
-   overflow-x: hidden;
+   overflow-x: clip;
 }
 
 h1 {
