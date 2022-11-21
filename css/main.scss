@@ -13,6 +13,16 @@ $btn-gradient: linear-gradient(270deg, #f06449, #ef3636);
 $primary-font: "Poppins", sans-serif;
 $secondary-font: "Roboto Mono", monospace;
 
+@mixin text-gradient($dir, $from, $to) {
+   background: -webkit-linear-gradient($dir, $from, $to);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+@mixin text-gradient-hover($color) {
+   -webkit-text-fill-color: $color;
+}
+
 * {
    padding: 0;
    margin: 0;
@@ -362,17 +372,20 @@ nav {
          margin-right: 3em;
       }
 
-      li.current a {
-         font-weight: bold;
-      }
-      li.nav-cta a {
-         color: $primary-colour;
-         border: 3px solid $primary-colour;
-         font-weight: bold;
+      li.nav-cta {
+         a {
+            @include text-gradient(180deg, #f06449, #ef3636);
+            font-weight: bold;
+            border: 3px solid;
+            border-image-slice: 10;
+            border-width: 3px;
+            border-image-source: $btn-gradient;
+            transition: all 0.5s;
 
-         &:hover {
-            background: $primary-colour;
-            color: white;
+            &:hover {
+               background: $btn-gradient;
+               @include text-gradient-hover(white);
+            }
          }
       }
    }

@@ -314,17 +314,20 @@ nav li a:hover {
     justify-content: flex-end;
     margin-right: 3em;
   }
-  .nav-container nav li.current a {
-    font-weight: bold;
-  }
   .nav-container nav li.nav-cta a {
-    color: #f06449;
-    border: 3px solid #f06449;
+    background: -webkit-linear-gradient(180deg, #f06449, #ef3636);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
+    border: 3px solid;
+    border-image-slice: 10;
+    border-width: 3px;
+    border-image-source: linear-gradient(270deg, #f06449, #ef3636);
+    transition: all 0.5s;
   }
   .nav-container nav li.nav-cta a:hover {
-    background: #f06449;
-    color: white;
+    background: linear-gradient(270deg, #f06449, #ef3636);
+    -webkit-text-fill-color: white;
   }
   .section-content {
     max-width: 1080px;
