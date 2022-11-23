@@ -13,16 +13,6 @@ $btn-gradient: linear-gradient(270deg, #f06449, #ef3636);
 $primary-font: "Poppins", sans-serif;
 $secondary-font: "Roboto Mono", monospace;
 
-@mixin text-gradient($dir, $from, $to) {
-   background: -webkit-linear-gradient($dir, $from, $to);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-}
-
-@mixin text-gradient-hover($color) {
-   -webkit-text-fill-color: $color;
-}
-
 * {
    padding: 0;
    margin: 0;
@@ -374,7 +364,11 @@ nav {
 
       li.nav-cta {
          a {
-            @include text-gradient(180deg, #f06449, #ef3636);
+            position: relative;
+            z-index: 1;
+            background: $btn-gradient;
+            background-clip: text;
+            color: transparent;
             font-weight: bold;
             border: 3px solid;
             border-image-slice: 10;
@@ -382,9 +376,25 @@ nav {
             border-image-source: $btn-gradient;
             transition: all 0.5s;
 
-            &:hover {
+            &::before {
+               position: absolute;
+               content: "";
+               top: 0;
+               right: 0;
+               bottom: 0;
+               left: 0;
                background: $btn-gradient;
-               @include text-gradient-hover(white);
+               z-index: -1;
+               opacity: 0;
+               transition: opacity 0.5s;
+            }
+
+            &:hover {
+               color: white;
+
+               &::before {
+                  opacity: 1;
+               }
             }
          }
       }

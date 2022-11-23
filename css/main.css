@@ -315,9 +315,12 @@ nav li a:hover {
     margin-right: 3em;
   }
   .nav-container nav li.nav-cta a {
-    background: -webkit-linear-gradient(180deg, #f06449, #ef3636);
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(270deg, #f06449, #ef3636);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+            background-clip: text;
+    color: transparent;
     font-weight: bold;
     border: 3px solid;
     border-image-slice: 10;
@@ -325,9 +328,23 @@ nav li a:hover {
     border-image-source: linear-gradient(270deg, #f06449, #ef3636);
     transition: all 0.5s;
   }
-  .nav-container nav li.nav-cta a:hover {
+  .nav-container nav li.nav-cta a::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: linear-gradient(270deg, #f06449, #ef3636);
-    -webkit-text-fill-color: white;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .nav-container nav li.nav-cta a:hover {
+    color: white;
+  }
+  .nav-container nav li.nav-cta a:hover::before {
+    opacity: 1;
   }
   .section-content {
     max-width: 1080px;
