@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;600&family=Poppins:wght@300;600&family=Roboto+Mono:wght@300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 $dark-theme-background: #1c1d25;
 $light-theme-primary-text: #1c1d25;
@@ -17,6 +17,13 @@ $secondary-font: "Roboto Mono", monospace;
    padding: 0;
    margin: 0;
    border: none;
+   scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+   * {
+      scroll-behavior: auto;
+   }
 }
 
 body {
@@ -40,7 +47,7 @@ h2 {
 
 p {
    font-weight: 300;
-   font-size: 1em;
+   font-size: 1.1em;
    overflow: wrap;
 }
 
@@ -144,7 +151,7 @@ nav {
       margin: auto;
 
       h1 {
-         font-size: 2.5em;
+         font-size: 4em;
          margin: 0.3em auto;
       }
       .subhead {
@@ -294,17 +301,34 @@ nav {
 
 .footer-section {
    padding: 2em 5em;
+   min-height: 20vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: stretch;
+
+   .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+   }
 
    .social-links {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
-      max-width: 400px;
-      margin: auto;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
       svg {
          height: 2.5em;
          width: auto;
+         transition: all 0.2s;
+         margin: 0.8em;
+
+         &:hover {
+            scale: 1.1;
+         }
       }
    }
    .copyright {
