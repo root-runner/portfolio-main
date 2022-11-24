@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 $dark-theme-background: #1c1d25;
@@ -47,7 +47,7 @@ h2 {
 
 p {
    font-weight: 300;
-   font-size: 1.1em;
+   font-size: 1.2em;
    overflow: wrap;
 }
 
@@ -167,10 +167,9 @@ nav {
          margin: 1em auto;
          font-size: 1.1em;
          font-weight: bold;
-         letter-spacing: 0.1em;
          display: inline-block;
          transition: all 0.2s;
-
+         box-shadow: 0px 5px 15px 10px rgba(0, 0, 0, 0.2);
          &:hover {
             scale: 105%;
          }
@@ -186,7 +185,7 @@ nav {
       svg {
          height: 40vh;
          width: auto;
-         opacity: 0.6;
+         opacity: 0.3;
       }
    }
 }
@@ -197,6 +196,8 @@ nav {
 }
 
 .section-content {
+   margin: 2em 0;
+
    .img-container {
       text-align: center;
    }
@@ -205,6 +206,16 @@ nav {
       max-width: 80%;
       padding-top: 2em;
    }
+}
+
+.heading-outline {
+   margin-bottom: -6%;
+   z-index: -1;
+   font-size: 7em;
+   color: transparent;
+   -webkit-text-stroke: 1px $secondary-color;
+   opacity: 0.3;
+   white-space: nowrap;
 }
 
 .contact-section {
@@ -292,11 +303,6 @@ nav {
          color: white;
       }
    }
-}
-
-.section-header,
-.section-footer {
-   padding: 1em 0;
 }
 
 .footer-section {
@@ -426,7 +432,7 @@ nav {
 
    .section-content {
       max-width: 1080px;
-      margin: auto;
+      margin: 3em auto;
       padding: 0 5vw;
    }
 }
@@ -493,6 +499,10 @@ nav {
       .training-content {
          max-width: 60%;
       }
+   }
+
+   .heading-outline {
+      margin-bottom: -4%;
    }
 
    .contact-section {

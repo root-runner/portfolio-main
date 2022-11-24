@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 * {
   padding: 0;
@@ -33,7 +33,7 @@ h2 {
 
 p {
   font-weight: 300;
-  font-size: 1.1em;
+  font-size: 1.2em;
   overflow: wrap;
 }
 
@@ -140,9 +140,9 @@ nav li a:hover {
   margin: 1em auto;
   font-size: 1.1em;
   font-weight: bold;
-  letter-spacing: 0.1em;
   display: inline-block;
   transition: all 0.2s;
+  box-shadow: 0px 5px 15px 10px rgba(0, 0, 0, 0.2);
 }
 .hero-container .left-col .primary-cta:hover {
   scale: 105%;
@@ -156,7 +156,7 @@ nav li a:hover {
 .hero-container .right-col svg {
   height: 40vh;
   width: auto;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .hero-img {
@@ -164,12 +164,25 @@ nav li a:hover {
   margin-top: 2em;
 }
 
+.section-content {
+  margin: 2em 0;
+}
 .section-content .img-container {
   text-align: center;
 }
 .section-content img {
   max-width: 80%;
   padding-top: 2em;
+}
+
+.heading-outline {
+  margin-bottom: -6%;
+  z-index: -1;
+  font-size: 7em;
+  color: transparent;
+  -webkit-text-stroke: 1px #4461c8;
+  opacity: 0.3;
+  white-space: nowrap;
 }
 
 .contact-section {
@@ -251,11 +264,6 @@ nav li a:hover {
 .contact-section input[type=submit]:hover {
   background: #f06449;
   color: white;
-}
-
-.section-header,
-.section-footer {
-  padding: 1em 0;
 }
 
 .footer-section {
@@ -369,7 +377,7 @@ nav li a:hover {
   }
   .section-content {
     max-width: 1080px;
-    margin: auto;
+    margin: 3em auto;
     padding: 0 5vw;
   }
 }
@@ -424,6 +432,9 @@ nav li a:hover {
 .section-content .skills-content,
 .section-content .training-content {
     max-width: 60%;
+  }
+  .heading-outline {
+    margin-bottom: -4%;
   }
   .contact-section {
     position: relative;

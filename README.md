@@ -1,5 +1,5 @@
 # portfolio-main
 
-This is my portfolio website for frontend development.
+This is my portfolio website.
 
 Please enjoy.
